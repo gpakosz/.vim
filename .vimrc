@@ -118,9 +118,9 @@ if has("statusline")
 endif
 
 if exists("+colorcolumn")
-  set colorcolumn=81         " display a marker after column 80
+  set colorcolumn=81          " display a marker after column 80
+  match ColorColumn /\%81v.*/ " warning when going over 80 characters per line
 endif
-match ColorColumn /\%81v.*/  " warning when going over 80 characters per linet 
 
 set showcmd     " show partial command line (default)
 set cmdheight=1 " height of the command line
