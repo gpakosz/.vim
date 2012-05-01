@@ -31,7 +31,7 @@ set directory=$HOME/.vim/tmp     " swap location
 if exists("*mkdir")
   silent! call mkdir($HOME . "/.vim", "p")
   silent! call mkdir(&backupdir, "p")
-  silent! call mkdir(&directory, "p") 
+  silent! call mkdir(&directory, "p")
 endif
 
 if has("persistent_undo")
@@ -140,6 +140,7 @@ endif
 " ease reading in GUI mode by inserting space between lines
 set linespace=2
 
+
 " -- buffers -------------------------------------------------------------------
 
 set encoding=utf-8    " set default encoding to UTF-8
@@ -157,6 +158,7 @@ endif
 
 " cd to the directory of the current buffer
 nnoremap <silent> <leader>cd :cd %:p:h<CR>
+
 
 " -- navigation ----------------------------------------------------------------
 
@@ -189,7 +191,6 @@ set sidescrolloff=4 " minimal number of columns to keep around the cursor
 nnoremap <leader>w <C-w>v<C-w>l
 " split current window horizontally
 nnoremap <leader>W <C-w>s
-
 
 if has("vertsplit")
   set splitright  " when splitting vertically, split to the right
