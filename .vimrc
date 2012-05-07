@@ -313,8 +313,8 @@ set cpoptions+=$  " display $ at the end of the replacement zone instead of
 set formatoptions-=t  " don't auto-wrap text using textwidth
 set formatoptions+=c  " auto-wrap comments using textwidth
 
-" exit from interactive mode with jj because <ESC> is too far away
-inoremap jj <ESC>
+" exit from interactive mode with jk because <ESC> is too far away
+inoremap jk <ESC>
 
 
 " -- searching -----------------------------------------------------------------
