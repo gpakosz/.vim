@@ -319,6 +319,9 @@ inoremap jk <ESC>
 " quick insertion of newline in normal mode with <CR>
 nnoremap <silent> <CR> :put=''<CR>
 
+" remap U to <C-r> for easier redo
+nnoremap U <C-r>
+
 
 " -- searching -----------------------------------------------------------------
 
