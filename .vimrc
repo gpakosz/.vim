@@ -352,6 +352,9 @@ nnoremap / /\v
 vnoremap / /\v
 cnoremap %s/ %s/\v
 
+" replace word under cursor
+nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
+
 " center screen on next/previous selection
 noremap n nzz
 noremap N Nzz
