@@ -205,6 +205,12 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" window resizing
+map <S-Left> <C-w><
+map <S-Down> <C-w>-
+map <S-Up> <C-w>+
+map <S-Right> <C-w>>
+
 " <leader>q quits the current window
 nnoremap <leader>q :q<CR>
 inoremap <leader>q <ESC>:q<CR>
