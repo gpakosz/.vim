@@ -220,11 +220,11 @@ nnoremap <silent> <leader>t :tabnew<CR>
 
 " next/previous tab navigation
 nnoremap <silent> <C-Tab> gt
-nnoremap <silent> <C-S-Tab> gT
+nnoremap <silent> <S-Tab> gT
 
 " next/previous buffer navigation
 nnoremap <silent> <C-b> :bnext<CR>
-nnoremap <silent> <C-S-b> :bprev<CR>
+nnoremap <silent> <S-b> :bprev<CR>
 
 set whichwrap=b,s,<,> " allow cursor left/right key to wrap to the
                       " previous/next line
