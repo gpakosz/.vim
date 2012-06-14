@@ -218,10 +218,6 @@ inoremap <leader>q <ESC>:q<CR>
 " create a new tab
 nnoremap <silent> <leader>t :tabnew<CR>
 
-" next/previous tab navigation
-nnoremap <silent> <C-Tab> gt
-nnoremap <silent> <S-Tab> gT
-
 " next/previous buffer navigation
 nnoremap <silent> <C-b> :bnext<CR>
 nnoremap <silent> <S-b> :bprev<CR>
