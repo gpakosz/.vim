@@ -96,8 +96,12 @@ else                  " fallback
   nnoremap <silent> <leader>n :set number! number?<CR>
 endif
 
-set nolist                          " hide unprintable characters
-set listchars=eol:$,tab:>-,trail:.  " display $ at eol when list is enabled
+set nolist                            " hide unprintable characters
+if has("multi_byte")                  " if multi_byte is available,
+  set listchars=eol:¬,tab:▸\ ,trail:. " use pretty Unicode unprintable symbols
+else                                  " otherwise,
+  set listchars=eol:$,tab:> ,trail:.  " use ASCII characters
+endif
 
 " inverts display of unprintable characters
 nmap <silent> <leader>l :set list! list?<CR>
