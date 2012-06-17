@@ -258,7 +258,8 @@ set softtabstop=2 " number of columns used when hitting TAB in insert mode
 set smarttab      " insert tabs on the start of a line according to shiftwidth
 
 if has("autocmd")
-  autocmd filetype make set noexpandtab " don't expand tab to space in Makefiles
+  " don't expand tab to space in Makefiles
+  autocmd filetype make setlocal noexpandtab
 endif
 
 set autoindent    " enable autoindenting
