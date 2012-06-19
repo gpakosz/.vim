@@ -332,6 +332,9 @@ nnoremap U <C-r>
 " preserve cursor position when joining lines
 nnoremap J mzJ`z
 
+" select what was just pasted
+nnoremap <leader>v V`] 
+
 
 " -- searching -----------------------------------------------------------------
 
