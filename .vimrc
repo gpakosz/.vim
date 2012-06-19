@@ -302,7 +302,7 @@ map <leader>Y "+Y
 map <leader>p "+p
 map <leader>P "+P
 
-" always share the system clipboard
+" always share the OS clipboard
 "set clipboard+=unnamed
 
 " autofix typos
@@ -328,6 +328,9 @@ nnoremap <silent> <CR> :put=''<CR>
 
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
+
+" preserve cursor position when joining lines
+nnoremap J mzJ`z
 
 
 " -- searching -----------------------------------------------------------------
