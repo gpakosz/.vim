@@ -1,5 +1,6 @@
 " -- bootstrap -----------------------------------------------------------------
 
+set encoding=utf-8  " set vim encoding to UTF-8
 set nocompatible    " the future is now, use vim defaults instead of vi ones
 set nomodeline      " disable mode lines (security measure)
 set history=1000    " boost commands and search patterns history
@@ -147,7 +148,6 @@ set linespace=2
 
 " -- buffers -------------------------------------------------------------------
 
-set encoding=utf-8    " set default encoding to UTF-8
 set nobomb            " don't clutter files with Unicode encoding with BOMs
 set hidden            " enable switching between buffers without saving
 set switchbuf=usetab  " switch to existing tab then window when switching buffer
