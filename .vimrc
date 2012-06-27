@@ -11,7 +11,7 @@ if exists("+shellslash")
 endif
 
 set timeoutlen=500  " time in milliseconds for a key sequence to complete
-let mapleader = "," " change leader key to ,
+let mapleader=","   " change leader key to ,
 
 " <leader>ev edits .vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
@@ -26,13 +26,20 @@ set nobackup      " disable backup files
 set nowritebackup " disable backup files
 set swapfile      " enable swap files (useful when loading huge files)
 
-set backupdir=$HOME/.vim/backup  " backups location
-set directory=$HOME/.vim/tmp     " swap location
+let s:vimdir=$HOME . "/.vim"
+let &backupdir=s:vimdir . "/backup"  " backups location
+let &directory=s:vimdir . "/tmp"     " swap location
 
 if exists("*mkdir")
-  silent! call mkdir($HOME . "/.vim", "p")
-  silent! call mkdir(&backupdir, "p")
-  silent! call mkdir(&directory, "p")
+  if !isdirectory(s:vimdir)
+    call mkdir(s:vimdir, "p")
+  endif
+  if !isdirectory(&backupdir)
+    call mkdir(&backupdir, "p")
+  endif
+  if !isdirectory(&directory)
+    call mkdir(&directory, "p")
+  endif
 endif
 
 if has("persistent_undo")
