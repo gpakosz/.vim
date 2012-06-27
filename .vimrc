@@ -216,6 +216,9 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" switch between windows by hitting <Tab> twice
+nmap <silent> <Tab><Tab> <C-w>w
+
 " window resizing
 map <S-Left> <C-w><
 map <S-Down> <C-w>-
@@ -340,7 +343,7 @@ nnoremap U <C-r>
 nnoremap J mzJ`z
 
 " select what was just pasted
-nnoremap <leader>v V`] 
+nnoremap <leader>v V`]
 
 
 " -- searching -----------------------------------------------------------------
