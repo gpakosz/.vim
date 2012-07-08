@@ -123,10 +123,55 @@ if exists("+showtabline")
 endif
 
 if has("statusline")
-  set laststatus=2  " always show a status line
 
+  function! StatusLineUTF8()
+    try
+      let p = getpos('.')
+      redir => utf8seq
+      sil normal! g8
+      redir End
+      call setpos('.', p)
+      return substitute(matchstr(utf8seq, '\x\+ .*\x'), '\<\x\x', '0x\U&', 'g')
+    catch
+      return '?'
+    endtry
+  endfunction
+
+  function! StatusLineFileEncoding()
+    if has("multi_byte") && strlen(&fenc)
+      return &fenc.(&fenc=='utf-8'&&&bomb?' !bomb!':'')
+    else
+      return ''
+    endif
+  endfunction
+
+  function! StatusLineCWD()
+    return getcwd()
+  endfunction
+
+  set laststatus=2  " always show a status line
   " set exact status line format
-  set statusline=%F%m%r%h%w\ [FMT=%{&ff}]\ [ENC=%{&fenc}]\ [TYPE=%Y]\ [ASCII=\%04.8b]\ [HEX=\%04.4B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+  set statusline=%02n\                           " buffer number
+  set statusline+=\|\ 
+  set statusline+=%F                             " full path to the file
+  set statusline+=%m                             " modified flag
+  set statusline+=%r                             " readonly flag
+  set statusline+=%h                             " help buffer flag
+  set statusline+=%w\                            " preview window flag
+  set statusline+=[%{&ff}]                       " file format
+  set statusline+=[%{StatusLineFileEncoding()}]  " file encoding
+  set statusline+=%y\                            " type of file
+  set statusline+=\|\ 
+  set statusline+=%{StatusLineCWD()}             " current working directory
+  set statusline+=%=                             " left / right items separator
+  set statusline+=%{v:register}\                 " current register in effect
+  set statusline+=\|\ 
+  set statusline+=[U+\%04B]                      " Unicode code point
+  set statusline+=[%{StatusLineUTF8()}]\         " UTF8 sequence
+  set statusline+=\|\ 
+  set statusline+=(line\ %5l/%L\                 " line number / number of lines
+  set statusline+=-\ %02p%%,\                    " percentage through file
+  set statusline+=col\ %3v)                      " column number
 endif
 
 if exists("+colorcolumn")
