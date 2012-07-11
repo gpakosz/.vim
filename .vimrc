@@ -402,8 +402,8 @@ if (&t_Co > 2 || has("gui_running"))
 endif
 " temporarily disable highlighting when entering insert mode
 if has("autocmd")
-  autocmd InsertEnter * let b:restorehlsearch=&hlsearch | :setlocal nohlsearch
-  autocmd InsertLeave * let &hlsearch=b:restorehlsearch
+  autocmd InsertEnter * let g:restorehlsearch=&hlsearch | :set nohlsearch
+  autocmd InsertLeave * let &hlsearch=g:restorehlsearch
 endif
 set ignorecase  " case insensitive search
 set smartcase   " case insensitive only if search pattern is all lowercase
