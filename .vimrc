@@ -410,8 +410,8 @@ set smartcase   " case insensitive only if search pattern is all lowercase
                 "   (smartcase requires ignorecase)
 set gdefault    " search/replace globally (on a line) by default
 
-" inverts search highlighting
-nnoremap <silent> <leader><space> :set hlsearch! hlsearch?<CR>
+" temporarily disable search highlighting
+nnoremap <silent> <leader><Space> :nohlsearch<CR>
 
 " highlight all instances of the current word where the cursor is positioned
 nnoremap <silent> <leader>/ :setl hls<CR>:let @/="<C-r><C-w>"<CR>
