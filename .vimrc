@@ -221,9 +221,9 @@ nnoremap <silent> <leader>cd :cd %:p:h<CR>
 " -- navigation ----------------------------------------------------------------
 
 " move to first non-whitespace character of line (when not using mac keyboard)
-map H ^
+noremap H ^
 " move to end of line (when not using mac keyboard)
-map L $
+noremap L g_
 
 " scroll slightly faster
 nnoremap <C-e> 2<C-e>
