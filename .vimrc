@@ -185,6 +185,12 @@ if exists("+colorcolumn")
   match ColorColumn /\%81v.*/ " warning when going over 80 characters per line
                               " you can disable it with 'match none ColorColumn'
                               " in your .vimrc.local
+
+  " temporarily disable ColorColumn highlighting when entering insert mode
+  if has("autocmd")
+    autocmd InsertEnter * match none ColorColumn
+    autocmd InsertLeave * match ColorColumn /\%81v.*/
+  endif
 endif
 
 set showcmd     " show partial command line (default)
@@ -409,6 +415,7 @@ set incsearch   " show match results while typing search pattern
 if (&t_Co > 2 || has("gui_running"))
   set hlsearch  " highlight search terms
 endif
+
 " temporarily disable highlighting when entering insert mode
 if has("autocmd")
   autocmd InsertEnter * let g:restorehlsearch=&hlsearch | :set nohlsearch
