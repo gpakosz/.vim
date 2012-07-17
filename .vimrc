@@ -111,6 +111,12 @@ else                                  " otherwise,
   set listchars=eol:$,tab:>\ ,trail:. " use ASCII characters
 endif
 
+" temporarily disable unprintable characters when entering insert mode
+if has("autocmd")
+  autocmd InsertEnter * let g:restorelist=&list | :set nolist
+  autocmd InsertLeave * let &list=g:restorelist
+endif
+
 " inverts display of unprintable characters
 nmap <silent> <leader>l :set list! list?<CR>
 
