@@ -389,6 +389,9 @@ nnoremap U <C-r>
 " preserve cursor position when joining lines
 nnoremap J mzJ`z
 
+" split line and preserve cursor position
+nnoremap S mzi<CR><Esc>`z
+
 " select what was just pasted
 nnoremap <leader>v V`]
 
