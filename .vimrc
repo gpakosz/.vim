@@ -106,9 +106,9 @@ endif
 
 set nolist                            " hide unprintable characters
 if has("multi_byte")                  " if multi_byte is available,
-  set listchars=eol:¬,tab:▸\ ,trail:. " use pretty Unicode unprintable symbols
+  set listchars=eol:¬,tab:▸\ ,trail:⌴ " use pretty Unicode unprintable symbols
 else                                  " otherwise,
-  set listchars=eol:$,tab:> ,trail:.  " use ASCII characters
+  set listchars=eol:$,tab:>\ ,trail:. " use ASCII characters
 endif
 
 " inverts display of unprintable characters
