@@ -144,11 +144,11 @@ if has("statusline")
   endfunction
 
   function! StatusLineFileEncoding()
-    if has("multi_byte") && strlen(&fenc)
-      return &fenc.(&fenc=='utf-8'&&&bomb?' !bomb!':'')
-    else
-      return ''
-    endif
+    return has("multi_byte") && strlen(&fenc) ? &fenc : ''
+  endfunction
+
+  function! StatusLineUTF8Bomb()
+    return has("multi_byte") && &fenc == 'utf-8' && &bomb?'+bomb' : ''
   endfunction
 
   function! StatusLineCWD()
@@ -157,27 +157,47 @@ if has("statusline")
 
   set laststatus=2  " always show a status line
   " set exact status line format
-  set statusline=%02n\                           " buffer number
-  set statusline+=\|\ 
-  set statusline+=%F                             " full path to the file
+  set statusline=
+  set statusline+=%#Number#
+  set statusline+=❐\ %02n                        " buffer number
+  set statusline+=\ \|\                          " separator
+  set statusline+=%*
+  set statusline+=%#Identifier#
+  set statusline+=%f                             " file path relative to CWD
+  set statusline+=%*
+  set statusline+=%#Special#
   set statusline+=%m                             " modified flag
+  set statusline+=%#Statement#
   set statusline+=%r                             " readonly flag
   set statusline+=%h                             " help buffer flag
-  set statusline+=%w\                            " preview window flag
+  set statusline+=%w                             " preview window flag
+  set statusline+=%#Type#
   set statusline+=[%{&ff}]                       " file format
-  set statusline+=[%{StatusLineFileEncoding()}]  " file encoding
-  set statusline+=%y\                            " type of file
-  set statusline+=\|\ 
+  set statusline+=[
+  set statusline+=%{StatusLineFileEncoding()}    " file encoding
+  set statusline+=%#Error#
+  set statusline+=%{StatusLineUTF8Bomb()}        " UTF-8 bomb alert
+  set statusline+=%#Type#
+  set statusline+=]  
+  set statusline+=%y                             " type of file
+  set statusline+=\ \|\                          " separator
+  set statusline+=%*
+  set statusline+=%#Directory#
   set statusline+=%{StatusLineCWD()}             " current working directory
+  set statusline+=\                              " separator
+  set statusline+=%*
   set statusline+=%=                             " left / right items separator
-  set statusline+=%{v:register}\                 " current register in effect
-  set statusline+=\|\ 
+  set statusline+=%#Comment#
+  set statusline+=%{v:register}                  " current register in effect
+  set statusline+=\                              " separator
+  set statusline+=%#Statement#
   set statusline+=[U+\%04B]                      " Unicode code point
-  set statusline+=[%{StatusLineUTF8()}]\         " UTF8 sequence
-  set statusline+=\|\ 
-  set statusline+=(line\ %5l/%L\                 " line number / number of lines
-  set statusline+=-\ %02p%%,\                    " percentage through file
-  set statusline+=col\ %3v)                      " column number
+  set statusline+=[%{StatusLineUTF8()}]          " UTF8 sequence
+  set statusline+=\ \|\                          " separator
+  set statusline+=%#Comment#
+  set statusline+=line\ %5l/%L\                  " line number / number of lines
+  set statusline+=●\ %02p%%,\                    " percentage through file
+  set statusline+=col\ %3v                       " column number
 endif
 
 if exists("+colorcolumn")
@@ -308,7 +328,7 @@ noremap <Space> <C-f>
 " nnoremap <Up> :echo "arrow keys disabled, use k"<CR>
 " nnoremap <Down> :echo "arrow keys disabled, use j"<CR>
 
-" move to the position where the last change was made 
+" move to the position where the last change was made
 noremap gI `.
 
 
