@@ -308,6 +308,9 @@ noremap <Space> <C-f>
 " nnoremap <Up> :echo "arrow keys disabled, use k"<CR>
 " nnoremap <Down> :echo "arrow keys disabled, use j"<CR>
 
+" move to the position where the last change was made 
+noremap gI `.
+
 
 " -- editing -------------------------------------------------------------------
 
