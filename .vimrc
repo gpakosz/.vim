@@ -277,15 +277,14 @@ set scrolloff=4     " number of lines to keep above and below the cursor
 set sidescroll=1    " minimal number of columns to scroll horizontally
 set sidescrolloff=4 " minimal number of columns to keep around the cursor
 
-" split current window vertically
-nnoremap <leader>w <C-w>v<C-w>l
-" split current window horizontally
-nnoremap <leader>W <C-w>s
-
 if has("vertsplit")
+  " split current window vertically
+  nnoremap <leader>_ <C-w>v<C-w>l
   set splitright  " when splitting vertically, split to the right
 endif
 if has("windows")
+  " split current window horizontally
+  nnoremap <leader>- <C-w>s
   set splitbelow  " when splitting horizontally, split below
 endif
 
