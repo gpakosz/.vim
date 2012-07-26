@@ -321,6 +321,12 @@ noremap <Space> <C-f>
 " move to the position where the last change was made
 noremap gI `.
 
+" by default, 'a jumps to line marked with ma
+" while `a jumps to line AND column marked with ma
+" swap ' and `
+nnoremap ' `
+nnoremap ` '
+
 
 " -- editing -------------------------------------------------------------------
 
