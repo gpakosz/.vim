@@ -202,15 +202,6 @@ endif
 
 if exists("+colorcolumn")
   set colorcolumn=81          " display a marker after column 80
-  match ColorColumn /\%81v.*/ " warning when going over 80 characters per line
-                              " you can disable it with 'match none ColorColumn'
-                              " in your .vimrc.local
-
-  " temporarily disable ColorColumn highlighting when entering insert mode
-  if has("autocmd")
-    autocmd InsertEnter * match none ColorColumn
-    autocmd InsertLeave * match ColorColumn /\%81v.*/
-  endif
 endif
 
 set showcmd     " show partial command line (default)
