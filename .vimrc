@@ -449,6 +449,8 @@ nnoremap <silent> <leader>h :setl hls<CR>:let @/="<C-r><C-w>"<CR>
 " everything but '0'-'9', 'a'-'z', 'A'-'Z' and '_' has a special meaning
 nnoremap / /\v
 vnoremap / /\v
+nnoremap ? ?\v
+vnoremap ? ?\v
 cnoremap %s/ %s/\v
 
 " replace word under cursor
