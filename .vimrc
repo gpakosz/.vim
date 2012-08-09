@@ -22,9 +22,9 @@ nnoremap <leader>sv :source $MYVIMRC<CR>:redraw<CR>:echo $MYVIMRC 'reloaded'<CR>
 
 " -- backup and swap files -----------------------------------------------------
 
-set nobackup      " disable backup files
-set nowritebackup " disable backup files
-set swapfile      " enable swap files (useful when loading huge files)
+set backup      " enable backup files
+set writebackup " enable backup files
+set swapfile    " enable swap files (useful when loading huge files)
 
 let s:vimdir=$HOME . "/.vim"
 let &backupdir=s:vimdir . "/backup"  " backups location
