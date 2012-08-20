@@ -295,8 +295,8 @@ map <S-Up> <C-w>+
 map <S-Right> <C-w>>
 
 " <leader>q quits the current window
-nnoremap <leader>q :q<CR>
-inoremap <leader>q <ESC>:q<CR>
+nnoremap <silent> <leader>q :q<CR>
+inoremap <silent> <leader>q <ESC>:q<CR>
 
 " create a new tab
 nnoremap <silent> <leader>t :tabnew<CR>
