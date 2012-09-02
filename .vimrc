@@ -42,9 +42,11 @@ if exists("*mkdir")
   endif
 endif
 
+set backupskip+=*.tmp " skip backup for *.tmp
+
 if has("persistent_undo")
   let &undodir=&backupdir
-  set undofile
+  set undofile  " enable persistent undo
 endif
 
 
