@@ -227,7 +227,7 @@ set linespace=2
 
 " -- buffers -------------------------------------------------------------------
 
-set nobomb            " don't clutter files with Unicode encoding with BOMs
+set nobomb            " don't clutter files with Unicode BOMs
 set hidden            " enable switching between buffers without saving
 set switchbuf=usetab  " switch to existing tab then window when switching buffer
 set autoread          " auto read files changed only from the outside of ViM
