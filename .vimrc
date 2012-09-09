@@ -410,8 +410,8 @@ set cpoptions+=$  " display $ at the end of the replacement zone instead of
 set formatoptions-=t  " don't auto-wrap text using textwidth
 set formatoptions+=c  " auto-wrap comments using textwidth
 
-" exit from interactive mode with jk because <ESC> is too far away
-inoremap jk <ESC>
+" exit from insert mode without cursor movement
+inoremap jk <ESC>`^
 
 " quick insertion of newline in normal mode with <CR>
 nnoremap <silent> <CR> :put=''<CR>
