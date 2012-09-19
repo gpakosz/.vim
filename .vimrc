@@ -358,7 +358,6 @@ endif
 
 set autoindent    " enable autoindenting
 set copyindent    " copy the previous indentation on autoindenting
-set smartindent   " smart autoindenting when starting a new line
 set shiftwidth=2  " indent with 2 spaces
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 
