@@ -429,6 +429,11 @@ nnoremap S mzi<CR><Esc>`z
 " select what was just pasted
 nnoremap <leader>v V`]
 
+" move current line down
+noremap <silent>- :m+<CR>
+" move current line up
+noremap <silent>_ :m-2<CR>
+
 
 " -- searching -----------------------------------------------------------------
 
