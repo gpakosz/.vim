@@ -409,6 +409,7 @@ set cpoptions+=$  " display $ at the end of the replacement zone instead of
 
 set formatoptions-=t  " don't auto-wrap text using textwidth
 set formatoptions+=c  " auto-wrap comments using textwidth
+set formatoptions+=r  " auto-insert current comment leader,  C-u to undo
 
 " exit from insert mode without cursor movement
 inoremap jk <ESC>`^
