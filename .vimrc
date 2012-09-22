@@ -379,8 +379,8 @@ nnoremap <silent> <leader>rt :1,$retab<CR>
 " <leader>s removes trailing spaces
 noremap <silent> <leader>s :let b:s=@/ | %s/\s\+$//e | let @/=b:s<CR>``
 
-" <leader>eol fixes mixed EOLs (^M)
-noremap <silent> <leader>eol :let b:s=@/ | %s/<C-V><CR>//e | let @/=b:s<CR>``
+" <leader>$ fixes mixed EOLs (^M)
+noremap <silent> <leader>$ :let b:s=@/ | %s/<C-V><CR>//e | let @/=b:s<CR>``
 
 " use <leader>d to delete a line without adding it to the yanked stack
 nnoremap <silent> <leader>d "_d
