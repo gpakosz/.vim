@@ -343,6 +343,7 @@ runtime macros/matchit.vim  " enable extended % matching
 
 set virtualedit=insert    " allow the cursor to go everywhere (insert)
 set virtualedit+=onemore  " allow the cursor to go just past the end of line
+set virtualedit+=block    " allow the cursor to go everywhere (visual block)
 
 set backspace=indent,eol,start " allow backspacing over everything (insert)
 
