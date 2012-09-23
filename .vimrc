@@ -461,10 +461,15 @@ set smartcase   " case insensitive only if search pattern is all lowercase
 set gdefault    " search/replace globally (on a line) by default
 
 " temporarily disable search highlighting
-nnoremap <silent> <leader><Space> :nohlsearch<CR>
+nnoremap <silent> <leader><Space> :nohlsearch<CR>:match none<CR>:2match none<CR>:3match none<CR>
 
 " highlight all instances of the current word where the cursor is positioned
 nnoremap <silent> <leader>hs :setl hls<CR>:let @/="\\<<C-r><C-w>\\>"<CR>
+
+" use <leader>h1, <leader>h2, <leader>h3 to highlight words in different colors
+nnoremap <silent> <leader>h1 :highlight Highlight1 ctermfg=0 ctermbg=226 guifg=Black guibg=Yellow<CR> :execute 'match Highlight1 /\<<C-r><C-w>\>/'<cr>
+nnoremap <silent> <leader>h2 :highlight Highlight2 ctermfg=0 ctermbg=51 guifg=Black guibg=Cyan<CR> :execute '2match Highlight2 /\<<C-r><C-w>\>/'<cr>
+nnoremap <silent> <leader>h3 :highlight Highlight3 ctermfg=0 ctermbg=46 guifg=Black guibg=Green<CR> :execute '3match Highlight3 /\<<C-r><C-w>\>/'<cr>
 
 " very magic search patterns
 " everything but '0'-'9', 'a'-'z', 'A'-'Z' and '_' has a special meaning
