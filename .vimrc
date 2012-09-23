@@ -231,7 +231,9 @@ set nobomb            " don't clutter files with Unicode BOMs
 set hidden            " enable switching between buffers without saving
 set switchbuf=usetab  " switch to existing tab then window when switching buffer
 set autoread          " auto read files changed only from the outside of ViM
-"set autowrite         " write changes before hiding a buffer
+if has("persistent_undo") && (&undofile)
+  set autowriteall    " auto write changes if persistent undo is enabled
+endif
 set fsync             " sync after write
 set confirm           " ask whether to save changed files
 
