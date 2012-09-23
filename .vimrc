@@ -464,7 +464,7 @@ set gdefault    " search/replace globally (on a line) by default
 nnoremap <silent> <leader><Space> :nohlsearch<CR>
 
 " highlight all instances of the current word where the cursor is positioned
-nnoremap <silent> <leader>h :setl hls<CR>:let @/="<C-r><C-w>"<CR>
+nnoremap <silent> <leader>hs :setl hls<CR>:let @/="\\<<C-r><C-w>\\>"<CR>
 
 " very magic search patterns
 " everything but '0'-'9', 'a'-'z', 'A'-'Z' and '_' has a special meaning
