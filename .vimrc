@@ -70,6 +70,11 @@ endif
 " sudo then write
 cabbrev w!! w !sudo tee % >/dev/null
 
+" CTRL+A moves to start of line in command mode
+cnoremap <C-a> <home>
+" CTRL+E moves to end of line in command mode
+cnoremap <C-e> <end>
+
 
 " -- display -------------------------------------------------------------------
 
