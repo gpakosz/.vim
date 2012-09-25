@@ -84,7 +84,10 @@ set report=0    " always report changes
 set cursorline  " highlight current line
 
 if has("autocmd")
-  autocmd filetype vim set textwidth=80
+  augroup vim
+    autocmd!
+    autocmd filetype vim set textwidth=80
+  augroup END
 endif
 
 if has("gui_running")
@@ -120,8 +123,11 @@ endif
 
 " temporarily disable unprintable characters when entering insert mode
 if has("autocmd")
-  autocmd InsertEnter * let g:restorelist=&list | :set nolist
-  autocmd InsertLeave * let &list=g:restorelist
+  augroup list
+    autocmd!
+    autocmd InsertEnter * let g:restorelist=&list | :set nolist
+    autocmd InsertLeave * let &list=g:restorelist
+  augroup END
 endif
 
 " inverts display of unprintable characters
@@ -185,7 +191,7 @@ if has("statusline")
   set statusline+=%#Error#
   set statusline+=%{StatusLineUTF8Bomb()}        " UTF-8 bomb alert
   set statusline+=%#Type#
-  set statusline+=]  
+  set statusline+=]
   set statusline+=%y                             " type of file
   set statusline+=\ \|\                          " separator
   set statusline+=%*
@@ -243,7 +249,10 @@ set fsync             " sync after write
 set confirm           " ask whether to save changed files
 
 if has("autocmd")
-  "autocmd BufWritePre * :%s/\s\+$//e " remove trailing spaces before saving
+  augroup trailing_spaces
+    autocmd!
+    "autocmd BufWritePre * :%s/\s\+$//e " remove trailing spaces before saving
+  augroup END
 endif
 
 " cd to the directory of the current buffer
@@ -360,8 +369,11 @@ set softtabstop=2 " number of columns used when hitting TAB in insert mode
 set smarttab      " insert tabs on the start of a line according to shiftwidth
 
 if has("autocmd")
-  " don't expand tab to space in Makefiles
-  autocmd filetype make setlocal noexpandtab
+  augroup makefile
+    autocmd!
+    " don't expand tab to space in Makefiles
+    autocmd filetype make setlocal noexpandtab
+  augroup END
 endif
 
 set autoindent    " enable autoindenting
@@ -452,8 +464,11 @@ endif
 
 " temporarily disable highlighting when entering insert mode
 if has("autocmd")
-  autocmd InsertEnter * let g:restorehlsearch=&hlsearch | :set nohlsearch
-  autocmd InsertLeave * let &hlsearch=g:restorehlsearch
+  augroup hlsearch
+    autocmd!
+    autocmd InsertEnter * let g:restorehlsearch=&hlsearch | :set nohlsearch
+    autocmd InsertLeave * let &hlsearch=g:restorehlsearch
+  augroup END
 endif
 set ignorecase  " case insensitive search
 set smartcase   " case insensitive only if search pattern is all lowercase
@@ -493,7 +508,10 @@ set spelllang=en  " English only
 set nospell       " disabled by default
 
 if has("autocmd")
-  autocmd filetype vim setlocal spell " enabled when editing .vimrc
+  augroup spell
+    autocmd!
+    autocmd filetype vim setlocal spell " enabled when editing .vimrc
+  augroup END
 endif
 
 
