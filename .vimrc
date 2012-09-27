@@ -235,6 +235,45 @@ endif
 " ease reading in GUI mode by inserting space between lines
 set linespace=2
 
+if has("folding")
+  set foldenable        " enable folding
+  set foldmethod=syntax " fold based on syntax highlighting
+  set foldlevelstart=99 " start editing with all folds open
+
+  " toggle folds
+  nnoremap <Space> za
+  vnoremap <Space> za
+
+  set foldtext=FoldText()
+  function! FoldText()
+    let l:lpadding = &fdc
+    if exists("+relativenumber")
+      if (&number || &relativenumber)
+        let l:lpadding += &numberwidth
+      endif
+    else
+      if (&number)
+        let l:lpadding += &numberwidth
+      endif
+    endif
+
+    " expand tabs
+    let l:start = substitute(getline(v:foldstart), '\t', repeat(' ', &tabstop), 'g')
+    let l:end = substitute(substitute(getline(v:foldend), '\t', repeat(' ', &tabstop), 'g'), '^\s*', '', 'g')
+
+    let l:info = ' (' . (v:foldend - v:foldstart) . ')'
+    let l:infolen = strlen(substitute(l:info, '.', 'x', 'g'))
+    let l:width = winwidth(0) - l:lpadding - l:infolen
+
+    let l:separator = ' … '
+    let l:separatorlen = strlen(substitute(l:separator, '.', 'x', 'g'))
+    let l:start = strpart(l:start , 0, l:width - strlen(substitute(l:end, '.', 'x', 'g')) - l:separatorlen)
+    let l:text = l:start . ' … ' . l:end
+
+    return l:text . repeat(' ', l:width - strlen(substitute(l:text, ".", "x", "g"))) . l:info
+  endfunction
+endif
+
 
 " -- buffers -------------------------------------------------------------------
 
@@ -326,9 +365,6 @@ nnoremap <silent> <S-b> :bprev<CR>
 set whichwrap=b,s,<,> " allow cursor left/right key to wrap to the
                       " previous/next line
                       " omit [,] as we use virtual edit in insert mode
-
-" make space in normal mode go down a page rather than left a character
-noremap <Space> <C-f>
 
 " disable arrow keys
 " nnoremap <Left> :echo "arrow keys disabled, use h"<CR>
@@ -498,8 +534,8 @@ cnoremap %s/ %s/\v
 nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
 
 " center screen on next/previous selection
-noremap n nzz
-noremap N Nzz
+noremap n nzzzv
+noremap N Nzzzv
 
 
 " -- spell checking ------------------------------------------------------------
