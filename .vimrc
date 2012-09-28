@@ -296,6 +296,10 @@ if has("autocmd")
     autocmd!
     "autocmd BufWritePre * :%s/\s\+$//e " remove trailing spaces before saving
   augroup END
+  augroup restore_cursor
+    " restore cursor position to last position upon file reopen
+    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
+  augroup END
 endif
 
 " cd to the directory of the current buffer
