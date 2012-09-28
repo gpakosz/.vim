@@ -88,6 +88,10 @@ if has("autocmd")
     autocmd!
     autocmd filetype vim set textwidth=80
   augroup END
+  augroup windows
+    autocmd!
+    autocmd VimResized * :wincmd = " resize splits when the window is resized
+  augroup END
 endif
 
 if has("gui_running")
