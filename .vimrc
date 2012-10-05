@@ -305,6 +305,9 @@ endif
 " cd to the directory of the current buffer
 nnoremap <silent> <leader>cd :cd %:p:h<CR>
 
+" switch between last two files
+nnoremap <leader><Tab> <c-^>
+
 
 " -- navigation ----------------------------------------------------------------
 
