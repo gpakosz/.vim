@@ -308,6 +308,10 @@ nnoremap <silent> <leader>cd :cd %:p:h<CR>
 " switch between last two files
 nnoremap <leader><Tab> <c-^>
 
+" <leader>w writes the whole buffer to the current file
+nnoremap <silent> <leader>w :w!<CR>
+inoremap <silent> <leader>w <ESC>:w!<CR>
+
 
 " -- navigation ----------------------------------------------------------------
 
