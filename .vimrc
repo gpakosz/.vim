@@ -83,6 +83,10 @@ set lazyredraw  " do not redraw when executing macros
 set report=0    " always report changes
 set cursorline  " highlight current line
 
+if strlen($TMUX)
+  set ttyfast
+endif
+
 if has("autocmd")
   augroup vim
     autocmd!
