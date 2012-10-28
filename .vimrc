@@ -543,11 +543,11 @@ nnoremap <silent> <leader>h3 :highlight Highlight3 ctermfg=0 ctermbg=46 guifg=Bl
 
 " very magic search patterns
 " everything but '0'-'9', 'a'-'z', 'A'-'Z' and '_' has a special meaning
-nnoremap / /\v
-vnoremap / /\v
-nnoremap ? ?\v
-vnoremap ? ?\v
-cnoremap %s/ %s/\v
+"nnoremap / /\v
+"vnoremap / /\v
+"nnoremap ? ?\v
+"vnoremap ? ?\v
+"cnoremap %s/ %s/\v
 
 " replace word under cursor
 nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
