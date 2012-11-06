@@ -565,7 +565,7 @@ set nospell       " disabled by default
 if has("autocmd")
   augroup spell
     autocmd!
-    autocmd filetype vim setlocal spell " enabled when editing .vimrc
+    "autocmd filetype vim setlocal spell " enabled when editing .vimrc
   augroup END
 endif
 
