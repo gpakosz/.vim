@@ -255,13 +255,20 @@ if has("folding")
   set foldtext=FoldText()
   function! FoldText()
     let l:lpadding = &fdc
+    redir => l:signs
+      execute 'silent sign place buffer='.bufnr('%')
+    redir End
+    let l:lpadding += l:signs =~ 'id=' ? 2 : 0
+
     if exists("+relativenumber")
-      if (&number || &relativenumber)
-        let l:lpadding += &numberwidth
+      if (&number)
+        let l:lpadding += max([&numberwidth, strlen(line('$'))]) + 1
+      elseif (&relativenumber)
+        let l:lpadding += max([&numberwidth, strlen(v:foldstart) + strlen(v:foldstart - line('w0')), strlen(v:foldstart) + strlen(line('w$') - v:foldstart)]) + 1
       endif
     else
       if (&number)
-        let l:lpadding += &numberwidth
+        let l:lpadding += max([&numberwidth, strlen(line('$'))]) + 1
       endif
     endif
 
