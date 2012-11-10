@@ -289,6 +289,9 @@ if has("folding")
   endfunction
 endif
 
+" highlight SCM merge conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
 
 " -- buffers -------------------------------------------------------------------
 
