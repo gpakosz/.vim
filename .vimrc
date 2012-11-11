@@ -499,7 +499,13 @@ set formatoptions+=r  " auto-insert current comment leader,  C-u to undo
 inoremap jk <ESC>`^
 
 " quick insertion of newline in normal mode with <CR>
-nnoremap <silent> <CR> :put=''<CR>
+if has("autocmd")
+  nnoremap <silent> <CR> :put=''<CR>
+  augroup newline
+    autocmd!
+    autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
+  augroup END
+endif
 
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
