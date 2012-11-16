@@ -10,8 +10,9 @@ if exists("+shellslash")
   set shellslash    " expand filenames with forward slash
 endif
 
-set timeoutlen=500  " time in milliseconds for a key sequence to complete
-let mapleader=","   " change leader key to ,
+set timeoutlen=500      " time in milliseconds for a key sequence to complete
+let mapleader=","       " change leader key to ,
+let maplocalleader=","  " change local leader key to ,
 
 " <leader>ev edits .vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
