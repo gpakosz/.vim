@@ -367,10 +367,25 @@ if has("windows")
 endif
 
 " window navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" move cursor wihout leaving insert mode
+try
+  redir => s:backspace
+  silent! execute 'set ' 't_kb?'
+  redir END
+  if s:backspace !~ '\^H'
+    inoremap <C-h> <C-o>h
+    inoremap <C-j> <C-o>j
+    inoremap <C-k> <C-o>k
+    inoremap <C-l> <C-o>l
+  endif
+finally
+  redir END
+endtry
 
 " switch between windows by hitting <Tab> twice
 nmap <silent> <Tab><Tab> <C-w>w
