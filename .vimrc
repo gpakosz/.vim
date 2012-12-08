@@ -76,6 +76,13 @@ cnoremap <C-a> <home>
 " CTRL+E moves to end of line in command mode
 cnoremap <C-e> <end>
 
+" CTRL+C closes the command window
+if has("autocmd")
+  augroup command
+    autocmd!
+    autocmd CmdwinEnter * noremap <buffer> <silent> <C-c> <ESC>:q<CR>
+  augroup END
+endif
 
 " -- display -------------------------------------------------------------------
 
