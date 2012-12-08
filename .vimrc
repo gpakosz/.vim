@@ -520,6 +520,7 @@ if has("autocmd")
   augroup newline
     autocmd!
     autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
+    autocmd CmdwinEnter * nnoremap <buffer> <CR> <CR>
   augroup END
 endif
 
