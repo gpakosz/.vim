@@ -538,7 +538,7 @@ nnoremap U <C-r>
 nnoremap J mzJ`z
 
 " split line and preserve cursor position
-nnoremap S mzi<CR><Esc>`z
+nnoremap S mzi<CR><ESC>`z
 
 " select what was just pasted
 nnoremap <leader>v V`]
@@ -595,6 +595,26 @@ nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
 " center screen on next/previous selection
 noremap n nzzzv
 noremap N Nzzzv
+
+
+function! GetVisualSelection()
+  let [l:l1, l:c1] = getpos("'<")[1:2]
+  let [l:l2, l:c2] = getpos("'>")[1:2]
+  let l:selection = getline(l:l1, l:l2)
+  let l:selection[-1] = l:selection[-1][: l:c2 - 1]
+  let l:selection[0] = l:selection[0][l:c1 - 1:]
+  return join(l:selection, "\n")
+endfunction
+
+" search for visually selected areas
+xnoremap * <ESC>/<C-r>=substitute(escape(GetVisualSelection(), '\/.*$^~[]'), "\n", '\\n', "g")<CR><CR>
+xnoremap # <ESC>?<C-r>=substitute(escape(GetVisualSelection(), '\/.*$^~[]'), "\n", '\\n', "g")<CR><CR>
+
+" prepare search based on visually selected area
+xnoremap / <ESC>/<C-r>=substitute(escape(GetVisualSelection(), '\/.*$^~[]'), "\n", '\\n', "g")<CR>
+
+" prepare substitution based on visually selected area
+xnoremap & <ESC>:%s/<C-r>=substitute(escape(GetVisualSelection(), '\/.*$^~[]'), "\n", '\\n', "g")<CR>/
 
 
 " -- spell checking ------------------------------------------------------------
