@@ -229,10 +229,6 @@ if has("statusline")
   set statusline+=col\ %3v                       " column number
 endif
 
-if exists("+colorcolumn")
-  set colorcolumn=81          " display a marker after column 80
-endif
-
 set showcmd     " show partial command line (default)
 set cmdheight=1 " height of the command line
 
