@@ -50,6 +50,8 @@ if has("persistent_undo")
   set undofile  " enable persistent undo
 endif
 
+let &viminfo=&viminfo . ",n" . s:vimdir . "/.viminfo" " viminfo location
+
 
 " -- file type detection -------------------------------------------------------
 
