@@ -541,6 +541,14 @@ nnoremap S mzi<CR><ESC>`z
 " select what was just pasted
 nnoremap <leader>v V`]
 
+" <C-Space> triggers completion in insert mode
+inoremap <C-Space> <C-P>
+if !has("gui_running")
+  inoremap <C-@> <C-P>
+endif
+
+set completeopt=longest,menuone,preview " better completion
+
 " move current line down
 noremap <silent>- :m+<CR>
 " move current line up
