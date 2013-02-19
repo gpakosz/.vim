@@ -332,6 +332,10 @@ nnoremap <leader><Tab> <c-^>
 nnoremap <silent> <leader>w :w!<CR>
 inoremap <silent> <leader>w <ESC>:w!<CR>
 
+" <leader>W writes all buffers
+nnoremap <silent> <leader>W :wa!<CR>
+inoremap <silent> <leader>W <ESC>:wa!<CR>
+
 
 " -- navigation ----------------------------------------------------------------
 
