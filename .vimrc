@@ -482,8 +482,8 @@ nnoremap <silent> <leader>pp :set paste! paste?<CR>
 " same in insert mode
 set pastetoggle=<leader>pp
 
-" <leader>rt retabs the file
-nnoremap <silent> <leader>rt :1,$retab<CR>
+" <leader>rt retabs the file, preserve cursor position
+nnoremap <silent> <leader>rt mz:retab<CR>`z
 
 " <leader>s removes trailing spaces
 noremap <silent> <leader>s :let b:s=@/ | %s/\s\+$//e | let @/=b:s<CR>``
