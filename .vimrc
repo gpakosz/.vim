@@ -440,6 +440,14 @@ nnoremap ` '
 
 set showmode      " always show the current editing mode
 set nowrap        " don't wrap lines
+set linebreak     " yet if enabled break at word boundaries 
+
+if has("multi_byte")  " if multi_byte is available,
+  set showbreak=↪     " use pretty Unicode marker
+else                  " otherwise,
+  set showbreak=>     " use ASCII character
+endif
+
 set nojoinspaces  " insert only one space after '.', '?', '!' when joining lines
 set showmatch     " briefly jumps the cursor to the matching brace on insert
 set matchtime=4   " blink matching braces for 0.4s
