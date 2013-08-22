@@ -565,6 +565,10 @@ set completeopt=longest,menuone,preview " better completion
 noremap <silent>- :m+<CR>
 " move current line up
 noremap <silent>_ :m-2<CR>
+" move visual selection down
+vnoremap <silent>- :m '>+1<CR>gv=gv
+" move visual selection up
+vnoremap <silent>_ :m '<-2<CR>gv=gv
 
 " change cursor to vertical bar in insert mode when using iTerm2
 if $TERM_PROGRAM == 'iTerm.app'
