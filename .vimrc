@@ -581,6 +581,8 @@ if $TERM_PROGRAM == 'iTerm.app'
   endif
 endif
 
+nnoremap Q <NOP>
+
 
 " -- searching -----------------------------------------------------------------
 
