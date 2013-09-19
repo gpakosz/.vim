@@ -503,6 +503,10 @@ noremap <silent> <leader>$ :let b:s=@/ | %s/<C-V><CR>//e | let @/=b:s<CR>``
 nnoremap <silent> <leader>d "_d
 vnoremap <silent> <leader>d "_d
 
+" use <leader>c to replace text without yanking replaced text
+nnoremap <silent> <leader>c "_c
+vnoremap <silent> <leader>c "_c
+
 " yank/paste to/from the OS clipboard
 map <leader>y "+y
 map <leader>Y "+Y
