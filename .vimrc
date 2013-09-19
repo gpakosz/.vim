@@ -508,10 +508,14 @@ nnoremap <silent> <leader>c "_c
 vnoremap <silent> <leader>c "_c
 
 " yank/paste to/from the OS clipboard
-map <leader>y "+y
-map <leader>Y "+Y
-map <leader>p "+p
-map <leader>P "+P
+noremap <silent> <leader>y "+y
+noremap <silent> <leader>Y "+Y
+noremap <silent> <leader>p "+p
+noremap <silent> <leader>P "+P
+
+" paste without yanking replaced text in visual mode
+vnoremap <silent> p "_dP
+vnoremap <silent> P "_dp
 
 " always share the OS clipboard
 "set clipboard+=unnamed
