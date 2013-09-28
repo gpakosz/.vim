@@ -18,7 +18,7 @@ let maplocalleader=","  " change local leader key to ,
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 
 " <leader>sv sources .vimrc
-nnoremap <leader>sv :source $MYVIMRC<CR>:redraw<CR>:echo $MYVIMRC 'reloaded'<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>:runtime! plugin/settings/*<CR>:redraw<CR>:echo $MYVIMRC 'reloaded'<CR>
 
 
 " -- backup and swap files -----------------------------------------------------
