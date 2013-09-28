@@ -687,10 +687,3 @@ if filereadable(expand("~/.pathogen_disabled"))
 endif
 silent! call pathogen#infect()
 silent! call pathogen#helptags()
-
-
-" -- user defined --------------------------------------------------------------
-
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
