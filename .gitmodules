@@ -30,3 +30,7 @@
 	path = bundle/sahara
 	url = https://github.com/tejr/sahara.git
 	ignore = untracked
+[submodule "bundle/undotree"]
+	path = bundle/undotree
+	url = https://github.com/mbbill/undotree.git
+	ignore = untracked
