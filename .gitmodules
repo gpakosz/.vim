@@ -62,3 +62,7 @@
 	path = bundle/markdown
 	url = https://github.com/tpope/vim-markdown.git
 	ignore = untracked
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter
+	ignore = untracked
