@@ -58,3 +58,7 @@
 	path = bundle/badwolf
 	url = https://github.com/sjl/badwolf.git
 	ignore = untracked
+[submodule "bundle/markdown"]
+	path = bundle/markdown
+	url = https://github.com/tpope/vim-markdown.git
+	ignore = untracked
