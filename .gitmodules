@@ -26,3 +26,7 @@
 	path = bundle/gitv
 	url = https://github.com/gregsexton/gitv.git
 	ignore = untracked
+[submodule "bundle/sahara"]
+	path = bundle/sahara
+	url = https://github.com/tejr/sahara.git
+	ignore = untracked
