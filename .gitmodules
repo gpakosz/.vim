@@ -66,3 +66,7 @@
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter
 	ignore = untracked
+[submodule "bundle/zoomwin"]
+	path = bundle/zoomwin
+	url = https://github.com/vim-scripts/ZoomWin.git
+	ignore = untracked
