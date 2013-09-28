@@ -130,3 +130,7 @@
 	path = bundle/textobj-word-column
 	url = https://github.com/coderifous/textobj-word-column.vim.git
 	ignore = untracked
+[submodule "bundle/abolish"]
+	path = bundle/abolish
+	url = https://github.com/tpope/vim-abolish.git
+	ignore = untracked
