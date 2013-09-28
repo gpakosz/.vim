@@ -18,3 +18,7 @@
 	path = bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 	ignore = untracked
+[submodule "bundle/haml"]
+	path = bundle/haml
+	url = https://github.com/tpope/vim-haml.git
+	ignore = untracked
