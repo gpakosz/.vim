@@ -46,3 +46,7 @@
 	path = bundle/buffergator
 	url = https://github.com/jeetsukumaran/vim-buffergator.git
 	ignore = untracked
+[submodule "bundle/molokai"]
+	path = bundle/molokai
+	url = https://github.com/tomasr/molokai.git
+	ignore = untracked
