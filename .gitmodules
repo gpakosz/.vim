@@ -78,3 +78,7 @@
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
 	ignore = untracked
+[submodule "bundle/clam"]
+	path = bundle/clam
+	url = https://github.com/sjl/clam.vim.git
+	ignore = untracked
