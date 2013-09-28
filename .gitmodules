@@ -118,3 +118,7 @@
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular
 	ignore = untracked
+[submodule "bundle/endwise"]
+	path = bundle/endwise
+	url = https://github.com/tpope/vim-endwise.git
+	ignore = untracked
