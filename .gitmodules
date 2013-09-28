@@ -42,3 +42,7 @@
 	path = bundle/recover
 	url = https://github.com/chrisbra/Recover.vim.git
 	ignore = untracked
+[submodule "bundle/buffergator"]
+	path = bundle/buffergator
+	url = https://github.com/jeetsukumaran/vim-buffergator.git
+	ignore = untracked

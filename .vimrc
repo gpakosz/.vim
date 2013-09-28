@@ -412,10 +412,6 @@ inoremap <silent> <leader>q <ESC>:q<CR>
 " create a new tab
 nnoremap <silent> <leader>t :tabnew<CR>
 
-" next/previous buffer navigation
-nnoremap <silent> <C-b> :bnext<CR>
-nnoremap <silent> <S-b> :bprev<CR>
-
 set whichwrap=b,s,<,> " allow cursor left/right key to wrap to the
                       " previous/next line
                       " omit [,] as we use virtual edit in insert mode
