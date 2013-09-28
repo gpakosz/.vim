@@ -106,3 +106,7 @@
 	path = bundle/peaksea
   url = https://github.com/vim-scripts/peaksea
 	ignore = untracked
+[submodule "bundle/yankring"]
+	path = bundle/yankring
+	url = https://github.com/vim-scripts/YankRing.vim
+	ignore = untracked
