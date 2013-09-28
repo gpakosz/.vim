@@ -114,3 +114,7 @@
 	path = bundle/splice
 	url = https://github.com/sjl/splice.vim
 	ignore = untracked
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = https://github.com/godlygeek/tabular
+	ignore = untracked
