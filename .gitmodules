@@ -74,3 +74,7 @@
 	path = bundle/signature
 	url = https://github.com/kshenoy/vim-signature.git
 	ignore = untracked
+[submodule "bundle/ack"]
+	path = bundle/ack
+	url = https://github.com/mileszs/ack.vim.git
+	ignore = untracked
