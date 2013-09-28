@@ -110,3 +110,7 @@
 	path = bundle/yankring
 	url = https://github.com/vim-scripts/YankRing.vim
 	ignore = untracked
+[submodule "bundle/splice"]
+	path = bundle/splice
+	url = https://github.com/sjl/splice.vim
+	ignore = untracked
