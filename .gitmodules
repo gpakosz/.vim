@@ -142,3 +142,7 @@
 	path = bundle/unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
 	ignore = untracked
+[submodule "bundle/signify"]
+	path = bundle/signify
+	url = https://github.com/mhinz/vim-signify
+	ignore = untracked
