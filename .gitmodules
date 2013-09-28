@@ -22,3 +22,7 @@
 	path = bundle/haml
 	url = https://github.com/tpope/vim-haml.git
 	ignore = untracked
+[submodule "bundle/gitv"]
+	path = bundle/gitv
+	url = https://github.com/gregsexton/gitv.git
+	ignore = untracked
