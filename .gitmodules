@@ -34,3 +34,7 @@
 	path = bundle/undotree
 	url = https://github.com/mbbill/undotree.git
 	ignore = untracked
+[submodule "bundle/vimux"]
+	path = bundle/vimux
+	url = https://github.com/benmills/vimux.git
+	ignore = untracked
