@@ -38,3 +38,7 @@
 	path = bundle/vimux
 	url = https://github.com/benmills/vimux.git
 	ignore = untracked
+[submodule "bundle/recover"]
+	path = bundle/recover
+	url = https://github.com/chrisbra/Recover.vim.git
+	ignore = untracked
