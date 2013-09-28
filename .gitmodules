@@ -94,3 +94,7 @@
 	path = bundle/easytags
 	url = https://github.com/xolox/vim-easytags
 	ignore = untracked
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
+	ignore = untracked
