@@ -54,3 +54,7 @@
 	path = bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion
 	ignore = untracked
+[submodule "bundle/badwolf"]
+	path = bundle/badwolf
+	url = https://github.com/sjl/badwolf.git
+	ignore = untracked
