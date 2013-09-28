@@ -70,3 +70,7 @@
 	path = bundle/zoomwin
 	url = https://github.com/vim-scripts/ZoomWin.git
 	ignore = untracked
+[submodule "bundle/signature"]
+	path = bundle/signature
+	url = https://github.com/kshenoy/vim-signature.git
+	ignore = untracked
