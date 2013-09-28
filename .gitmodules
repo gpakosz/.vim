@@ -138,3 +138,7 @@
 	path = bundle/repeat
 	url = https://github.com/tpope/vim-repeat.git
 	ignore = untracked
+[submodule "bundle/unimpaired"]
+	path = bundle/unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+	ignore = untracked
