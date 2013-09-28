@@ -126,3 +126,7 @@
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git
 	ignore = untracked
+[submodule "bundle/textobj-word-column"]
+	path = bundle/textobj-word-column
+	url = https://github.com/coderifous/textobj-word-column.vim.git
+	ignore = untracked
