@@ -102,3 +102,7 @@
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround.git
 	ignore = untracked
+[submodule "bundle/peaksea"]
+	path = bundle/peaksea
+  url = https://github.com/vim-scripts/peaksea
+	ignore = untracked
