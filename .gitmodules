@@ -50,3 +50,7 @@
 	path = bundle/molokai
 	url = https://github.com/tomasr/molokai.git
 	ignore = untracked
+[submodule "bundle/easymotion"]
+	path = bundle/easymotion
+	url = https://github.com/Lokaltog/vim-easymotion
+	ignore = untracked
