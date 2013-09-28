@@ -673,7 +673,23 @@ if has("autocmd")
 endif
 
 
-" --user defined ---------------------------------------------------------------
+" -- pathogen ------------------------------------------------------------------
+
+" add ~/.vim to runtimepath if not present yet
+" (eases cloning .vim.git on Windows)
+if (match(&runtimepath, "\\.vim") == -1)
+  set runtimepath^=~/.vim
+endif
+
+silent! runtime bundle/pathogen/autoload/pathogen.vim
+if filereadable(expand("~/.pathogen_disabled"))
+  let g:pathogen_disabled = readfile(expand("~/.pathogen_disabled"))
+endif
+silent! call pathogen#infect()
+silent! call pathogen#helptags()
+
+
+" -- user defined --------------------------------------------------------------
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
