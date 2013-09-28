@@ -122,3 +122,7 @@
 	path = bundle/endwise
 	url = https://github.com/tpope/vim-endwise.git
 	ignore = untracked
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+	ignore = untracked
