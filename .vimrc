@@ -487,7 +487,7 @@ nnoremap <silent> <leader>pp :set paste! paste?<CR>
 set pastetoggle=<leader>pp
 
 " <leader>rt retabs the file, preserve cursor position
-nnoremap <silent> <leader>rt mz:retab<CR>`z
+nnoremap <silent> <leader>rt mz:retab<CR>`z:delm z<CR>
 
 " <leader>s removes trailing spaces
 noremap <silent> <leader>s :let b:s=@/ | %s/\s\+$//e | let @/=b:s<CR>``
@@ -549,10 +549,10 @@ endif
 nnoremap U <C-r>
 
 " preserve cursor position when joining lines
-nnoremap J mzJ`z
+nnoremap J mzJ`z:delm z<CR>:delm z<CR>
 
 " split line and preserve cursor position
-nnoremap S mzi<CR><ESC>`z
+nnoremap S mzi<CR><ESC>`z:delm z<CR>
 
 " select what was just pasted
 nnoremap <leader>v V`]
