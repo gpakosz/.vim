@@ -113,18 +113,39 @@ if has("gui_running")
 endif
 
 if exists("+relativenumber")
+  if v:version >= 400
+    set number
+  endif
   set relativenumber  " show relative line numbers
   set numberwidth=3   " narrow number column
   " cycles between relative / absolute / no numbering
-  function! RelativeNumberToggle()
-    if (&relativenumber == 1)
-      set number number?
-    elseif (&number == 1)
-      set nonumber number?
-    else
-      set relativenumber relativenumber?
-    endif
-  endfunc
+  if v:version >= 400
+    function! RelativeNumberToggle()
+      if (&number == 1 && &relativenumber == 1)
+        set nonumber
+        set relativenumber relativenumber?
+      elseif (&number == 0 && &relativenumber == 1)
+        set norelativenumber
+        set number number?
+      elseif (&number == 1 && &relativenumber == 0)
+        set norelativenumber
+        set nonumber number?
+      else
+        set number
+        set relativenumber relativenumber?
+      endif
+    endfunc
+  else
+    function! RelativeNumberToggle()
+      if (&relativenumber == 1)
+        set number number?
+      elseif (&number == 1)
+        set nonumber number?
+      else
+        set relativenumber relativenumber?
+      endif
+    endfunc
+  endif
   nnoremap <silent> <leader>n :call RelativeNumberToggle()<CR>
 else                  " fallback
   set number          " show line numbers
@@ -436,7 +457,7 @@ nnoremap ` '
 
 set showmode      " always show the current editing mode
 set nowrap        " don't wrap lines
-set linebreak     " yet if enabled break at word boundaries 
+set linebreak     " yet if enabled break at word boundaries
 
 if has("multi_byte")  " if multi_byte is available,
   set showbreak=↪     " use pretty Unicode marker
