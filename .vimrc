@@ -168,7 +168,7 @@ endif
 " inverts display of unprintable characters
 nmap <silent> <leader>l :set list! list?<CR>
 
-set visualbell    " shut up
+set novisualbell  " stop flashing the screen
 set noerrorbells  " shut up
 set mousehide     " hide mouse pointer when typing
 
