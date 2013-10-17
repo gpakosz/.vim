@@ -29,6 +29,7 @@ Enhancements:
 
 - [abolish](https://github.com/tpope/vim-abolish.git)
 - [ack](https://github.com/mileszs/ack.vim.git)
+- [ag](https://github.com/rking/ag.vim)
 - [buffergator](https://github.com/jeetsukumaran/vim-buffergator.git)
 - [clam](https://github.com/sjl/clam.vim.git)
 - [ctrlp](https://github.com/kien/ctrlp.vim.git)

@@ -146,3 +146,7 @@
 	path = bundle/signify
 	url = https://github.com/mhinz/vim-signify
 	ignore = untracked
+[submodule "bundle/ag"]
+	path = bundle/ag
+	url = https://github.com/rking/ag.vim
+	ignore = untracked
