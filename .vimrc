@@ -531,14 +531,23 @@ nnoremap <silent> <leader>pp :set paste! paste?<CR>
 " same in insert mode
 set pastetoggle=<leader>pp
 
+function! Preserve(command)
+  let l:search=@/
+  let l:line = line(".")
+  let l:col = col(".")
+  execute a:command
+  let @/=l:search
+  call cursor(l:line, l:col)
+endfunction
+
 " <leader>rt retabs the file, preserve cursor position
-nnoremap <silent> <leader>rt mz:retab<CR>`z:delm z<CR>
+nnoremap <silent> <leader>rt :call Preserve(":retab")<CR>
 
 " <leader>s removes trailing spaces
-noremap <silent> <leader>s :let b:s=@/ | %s/\s\+$//e | let @/=b:s<CR>``
+noremap <silent> <leader>s :call Preserve("%s/\\s\\+$//e")<CR>
 
 " <leader>$ fixes mixed EOLs (^M)
-noremap <silent> <leader>$ :let b:s=@/ | %s/<C-V><CR>//e | let @/=b:s<CR>``
+noremap <silent> <leader>$ :call Preserve("%s/<C-V><CR>//e")<CR>
 
 " use <leader>d to delete a line without adding it to the yanked stack
 nnoremap <silent> <leader>d "_d
@@ -594,10 +603,10 @@ endif
 nnoremap U <C-r>
 
 " preserve cursor position when joining lines
-nnoremap J mzJ`z:delm z<CR>:delm z<CR>
+nnoremap J :call Preserve("normal! J")<CR>
 
 " split line and preserve cursor position
-nnoremap S mzi<CR><ESC>`z:delm z<CR>
+nnoremap S :call Preserve("normal! i\r")<CR>
 
 " select what was just pasted
 nnoremap <leader>v V`]
