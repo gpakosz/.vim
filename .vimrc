@@ -641,6 +641,9 @@ endif
 
 nnoremap Q <NOP>
 
+" make dot work in visual mode
+vnoremap . :normal .<CR>
+
 
 " -- searching -----------------------------------------------------------------
 
