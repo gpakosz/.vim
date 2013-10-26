@@ -150,3 +150,7 @@
 	path = bundle/ag
 	url = https://github.com/rking/ag.vim
 	ignore = untracked
+[submodule "bundle/sneak"]
+	path = bundle/sneak
+	url = https://github.com/justinmk/vim-sneak.git
+	ignore = untracked
