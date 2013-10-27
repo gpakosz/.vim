@@ -200,7 +200,8 @@ if has("statusline")
   endfunction
 
   function! StatusLineCWD()
-    return getcwd()
+    let l:pwd = exists('$PWD') ? $PWD : getcwd()
+    return substitute(fnamemodify(l:pwd, ':~'), '\(\~\?/[^/]*/\).*\(/.\{20\}\)', '\1...\2', '')
   endfunction
 
   set laststatus=2  " always show a status line
