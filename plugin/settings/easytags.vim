@@ -2,7 +2,20 @@
 
 let g:easytags_suppress_ctags_warning = 1
 
-nnoremap <leader>ht let b:easytags_auto_highlight=!b:easytags_auto_highlight<CR>
+let g:easytags_auto_highlight = 0
+nnoremap <silent> <leader>ht :call <SID>toggle_easytags_auto_highlight()<CR>
+function! s:toggle_easytags_auto_highlight()
+  let b:easytags_auto_highlight = !get(b:, 'easytags_auto_highlight', g:easytags_auto_highlight)
+
+  if b:easytags_auto_highlight
+    call xolox#easytags#highlight()
+    echo 'easytags auto highlight on'
+  else
+    syntax enable
+    redraw
+    echo 'easytags auto highlight off'
+  endif
+endfunction
 
 let s:vimdir=$HOME . "/.vim"
 if exists("*mkdir")
