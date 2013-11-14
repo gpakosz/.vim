@@ -43,6 +43,7 @@ Enhancements:
 - [recover](https://github.com/chrisbra/Recover.vim.git)
 - [repeat](https://github.com/tpope/vim-repeat.git)
 - [signature](https://github.com/kshenoy/vim-signature.git)
+- [sneak](https://github.com/justinmk/vim-sneak.git)
 - [signify](https://github.com/mhinz/vim-signify.git)
 - [splice](https://github.com/sjl/splice.vim)
 - [supertab](https://github.com/ervandew/supertab.git)
