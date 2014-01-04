@@ -645,6 +645,12 @@ nnoremap Q <NOP>
 " make dot work in visual mode
 vnoremap . :normal .<CR>
 
+" make v enter blockwise visual mode, and CTRL-V enter visual mode
+nnoremap v <C-V>
+nnoremap <C-V> v
+vnoremap v <C-V>
+vnoremap <C-V> v
+
 
 " -- searching -----------------------------------------------------------------
 
