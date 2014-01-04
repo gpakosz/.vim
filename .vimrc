@@ -693,9 +693,20 @@ nnoremap <silent> <leader>h3 :highlight Highlight3 ctermfg=0 ctermbg=46 guifg=Bl
 " replace word under cursor
 nnoremap <leader>; :%s/\<<C-r><C-w>\>//<Left>
 
-" center screen on next/previous selection
-noremap n nzzzv
-noremap N Nzzzv
+
+function! BlinkMatch(t)
+    let [l:bufnum, l:lnum, l:col, l:off] = getpos('.')
+    let l:current = '\c\%#'.@/
+    let l:highlight = matchadd('IncSearch', l:current, 1000)
+    redraw
+    exec 'sleep ' . float2nr(a:t * 1000) . 'm'
+    call matchdelete(l:highlight)
+    redraw
+endfunction
+
+" center screen on next/previous match, blink current match
+noremap <silent> n nzzzv:call BlinkMatch(0.2)<CR>
+noremap <silent> N Nzzzv:call BlinkMatch(0.2)<CR>
 
 
 function! GetVisualSelection()
