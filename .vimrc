@@ -166,7 +166,7 @@ if has("autocmd")
 endif
 
 " inverts display of unprintable characters
-nmap <silent> <leader>l :set list! list?<CR>
+nnoremap <silent> <leader>l :set list! list?<CR>
 
 set novisualbell  " stop flashing the screen
 set noerrorbells  " shut up
@@ -415,7 +415,7 @@ finally
 endtry
 
 " switch between windows by hitting <Tab> twice
-nmap <silent> <Tab><Tab> <C-w>w
+nnoremap <silent> <Tab><Tab> <C-w>w
 
 " window resizing
 map <S-Left> <C-w><
