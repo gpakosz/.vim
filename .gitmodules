@@ -154,3 +154,7 @@
 	path = bundle/sneak
 	url = https://github.com/justinmk/vim-sneak.git
 	ignore = untracked
+[submodule "bundle/daylerees-colour-schemes"]
+	path = bundle/daylerees-colour-schemes
+	url = https://github.com/daylerees/colour-schemes.git
+	ignore = untracked
