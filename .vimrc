@@ -168,9 +168,9 @@ endif
 " inverts display of unprintable characters
 nnoremap <silent> <leader>l :set list! list?<CR>
 
-set novisualbell  " stop flashing the screen
-set noerrorbells  " shut up
-set mousehide     " hide mouse pointer when typing
+set noerrorbells      " shut up
+set visualbell t_vb=  " use visual bell instead of error bell
+set mousehide         " hide mouse pointer when typing
 
 if exists("+showtabline")
   set showtabline=1 " only if there are at least two tabs (default)
