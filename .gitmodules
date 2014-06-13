@@ -162,3 +162,7 @@
 	path = bundle/pasta
 	url = https://github.com/sickill/vim-pasta.git
   ignore = untracked
+[submodule "bundle/airline"]
+	path = bundle/airline
+	url = https://github.com/bling/vim-airline.git
+  ignore = untracked
