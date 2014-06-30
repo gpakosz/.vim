@@ -10,6 +10,8 @@ if exists("+shellslash")
   set shellslash    " expand filenames with forward slash
 endif
 
+set noshelltemp " use pipes instead of temp files for shell commands
+
 set timeoutlen=500      " time in milliseconds for a key sequence to complete
 let mapleader=","       " change leader key to ,
 let maplocalleader=","  " change local leader key to ,
