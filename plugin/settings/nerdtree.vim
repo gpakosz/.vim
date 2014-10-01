@@ -2,7 +2,9 @@
 
 if has("autocmd")
 	" open a NERDTree when vim starts up with no files specified
-  autocmd vimenter * if !argc() | NERDTree | endif
+  autocmd stdinreadpre * let s:std_in=1
+  autocmd vimenter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
   " close vim if the only window left open is a NERDTree
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 endif
