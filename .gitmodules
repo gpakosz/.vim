@@ -162,3 +162,7 @@
 	path = bundle/polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
   ignore = untracked
+[submodule "bundle/incsearch"]
+	path = bundle/incsearch
+	url = https://github.com/haya14busa/incsearch.vim.git
+  ignore = untracked
