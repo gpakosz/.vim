@@ -3,3 +3,16 @@
 if exists("+colorcolumn")
   set colorcolumn=81          " display a marker after column 80
 endif
+
+" hides carriage returns in case of mixed line endings
+for i in ['cterm', 'gui']
+  for j in ['fg', 'bg']
+    let c = synIDattr(hlID('Normal'), 'bg', i)
+    if (!empty(c))
+      exec 'highlight CarriageReturn ' . i . j . '=' . c
+    endif
+  endfor
+endfor
+if hlID('CarriageReturn')
+  match CarriageReturn /\r$/
+endif
