@@ -33,6 +33,37 @@ if !empty($CONEMUBUILD)
 endif
 
 
+" -- tmux integration ----------------------------------------------------------
+
+" make arrow keys, home/end/pgup/pgdown, and function keys work when inside tmux
+if exists('$TMUX') && (system("tmux show-options -wg xterm-keys | cut -d' ' -f2") =~ '^on')
+  " tmux will send xterm-style keys when its xterm-keys option is on
+  " add 'setw -g xterm-keys on' to your ~/.tmux.conf
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
+  execute "set <xHome>=\e[1;*H"
+  execute "set <xEnd>=\e[1;*F"
+  execute "set <Insert>=\e[2;*~"
+  execute "set <Delete>=\e[3;*~"
+  execute "set <PageUp>=\e[5;*~"
+  execute "set <PageDown>=\e[6;*~"
+  execute "set <xF1>=\e[1;*P"
+  execute "set <xF2>=\e[1;*Q"
+  execute "set <xF3>=\e[1;*R"
+  execute "set <xF4>=\e[1;*S"
+  execute "set <F5>=\e[15;*~"
+  execute "set <F6>=\e[17;*~"
+  execute "set <F7>=\e[18;*~"
+  execute "set <F8>=\e[19;*~"
+  execute "set <F9>=\e[20;*~"
+  execute "set <F10>=\e[21;*~"
+  execute "set <F11>=\e[23;*~"
+  execute "set <F12>=\e[24;*~"
+endif
+
+
 " -- backup and swap files -----------------------------------------------------
 
 set backup      " enable backup files
@@ -97,6 +128,7 @@ if has("autocmd")
     autocmd CmdwinEnter * noremap <buffer> <silent> <C-c> <ESC>:q<CR>
   augroup END
 endif
+
 
 " -- display -------------------------------------------------------------------
 
@@ -460,34 +492,6 @@ noremap gI `.
 " swap ' and `
 nnoremap ' `
 nnoremap ` '
-
-" make arrow keys, home/end/pgup/pgdown, and function keys work when inside tmux
-if exists('$TMUX') && (system("tmux show-options -wg xterm-keys | cut -d' ' -f2") =~ '^on')
-  " tmux will send xterm-style keys when its xterm-keys option is on
-  " add 'setw -g xterm-keys on' to your ~/.tmux.conf
-  execute "set <xUp>=\e[1;*A"
-  execute "set <xDown>=\e[1;*B"
-  execute "set <xRight>=\e[1;*C"
-  execute "set <xLeft>=\e[1;*D"
-  execute "set <xHome>=\e[1;*H"
-  execute "set <xEnd>=\e[1;*F"
-  execute "set <Insert>=\e[2;*~"
-  execute "set <Delete>=\e[3;*~"
-  execute "set <PageUp>=\e[5;*~"
-  execute "set <PageDown>=\e[6;*~"
-  execute "set <xF1>=\e[1;*P"
-  execute "set <xF2>=\e[1;*Q"
-  execute "set <xF3>=\e[1;*R"
-  execute "set <xF4>=\e[1;*S"
-  execute "set <F5>=\e[15;*~"
-  execute "set <F6>=\e[17;*~"
-  execute "set <F7>=\e[18;*~"
-  execute "set <F8>=\e[19;*~"
-  execute "set <F9>=\e[20;*~"
-  execute "set <F10>=\e[21;*~"
-  execute "set <F11>=\e[23;*~"
-  execute "set <F12>=\e[24;*~"
-endif
 
 
 " -- editing -------------------------------------------------------------------
