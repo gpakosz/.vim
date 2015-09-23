@@ -4,7 +4,7 @@
 	ignore = untracked
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
 	ignore = untracked
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
