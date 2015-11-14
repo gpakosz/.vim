@@ -166,3 +166,7 @@
 	path = bundle/incsearch
 	url = https://github.com/haya14busa/incsearch.vim.git
   ignore = untracked
+[submodule "bundle/nerdtree-git"]
+	path = bundle/nerdtree-git
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin
+  ignore = untracked
