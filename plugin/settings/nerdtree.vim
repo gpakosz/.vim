@@ -2,11 +2,13 @@
 
 if has("autocmd")
 	" open a NERDTree when vim starts up with no files specified
-  autocmd stdinreadpre * let s:std_in=1
-  autocmd vimenter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
   " close vim if the only window left open is a NERDTree
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+  autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+  autocmd WinEnter * if exists('b:NERDTree') | execute 'normal R' | endif
 endif
 
 " toggle NERDTree with <C-N>
