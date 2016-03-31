@@ -170,3 +170,7 @@
 	path = bundle/nerdtree-git
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin
   ignore = untracked
+[submodule "bundle/alduin"]
+	path = bundle/alduin
+	url = https://github.com/AlessandroYorba/Alduin.git
+  ignore = untracked
