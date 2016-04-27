@@ -174,3 +174,7 @@
 	path = bundle/alduin
 	url = https://github.com/AlessandroYorba/Alduin.git
   ignore = untracked
+[submodule "bundle/cursorword"]
+	path = bundle/cursorword
+	url = https://github.com/itchyny/vim-cursorword.git
+  ignore = untracked
