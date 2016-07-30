@@ -24,7 +24,7 @@
 	ignore = untracked
 [submodule "bundle/sahara"]
 	path = bundle/sahara
-	url = https://github.com/tejr/sahara.git
+	url = https://sanctum.geek.nz/code/sahara.git
 	ignore = untracked
 [submodule "bundle/undotree"]
 	path = bundle/undotree
