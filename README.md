@@ -47,7 +47,7 @@ Enhancements:
 - [signify](https://github.com/mhinz/vim-signify.git)
 - [splice](https://github.com/sjl/splice.vim)
 - [supertab](https://github.com/ervandew/supertab.git)
-- [surround](https://github.com/ervandew/supertab.git)
+- [surround](https://github.com/tpope/vim-surround)
 - [tabular](https://github.com/godlygeek/tabular)
 - [tagbar](https://github.com/majutsushi/tagbar)
 - [textobj-word-column](https://github.com/coderifous/textobj-word-column.vim.git)
