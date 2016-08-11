@@ -17,6 +17,7 @@ call airline#parts#define_function('utf8', '<SNR>' . s:SID() . '_utf8')
 
 function! s:init()
 let g:airline_section_z = airline#section#create(['[U+%04B]', 'utf8', g:airline_symbols.space, 'windowswap', '%3p%%'.g:airline_symbols.space, 'linenr', ':%3c '])
+:AirlineRefresh
 endfunction
 
 autocmd VimEnter * call <SID>init()
