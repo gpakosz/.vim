@@ -401,11 +401,6 @@ inoremap <silent> <leader>W <ESC>:wa!<CR>
 
 " -- navigation ----------------------------------------------------------------
 
-" move to first non-whitespace character of line (when not using mac keyboard)
-noremap H ^
-" move to end of line (when not using mac keyboard)
-noremap L g_
-
 " scroll slightly faster
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
