@@ -96,7 +96,7 @@
 	ignore = untracked
 [submodule "bundle/peaksea"]
 	path = bundle/peaksea
-  url = https://github.com/vim-scripts/peaksea
+	url = https://github.com/vim-scripts/peaksea
 	ignore = untracked
 [submodule "bundle/yankring"]
 	path = bundle/yankring
@@ -153,36 +153,40 @@
 [submodule "bundle/pasta"]
 	path = bundle/pasta
 	url = https://github.com/sickill/vim-pasta.git
-  ignore = untracked
+	ignore = untracked
 [submodule "bundle/airline"]
 	path = bundle/airline
 	url = https://github.com/bling/vim-airline.git
-  ignore = untracked
+	ignore = untracked
 [submodule "bundle/polyglot"]
 	path = bundle/polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
-  ignore = untracked
+	ignore = untracked
 [submodule "bundle/incsearch"]
 	path = bundle/incsearch
 	url = https://github.com/haya14busa/incsearch.vim.git
-  ignore = untracked
+	ignore = untracked
 [submodule "bundle/nerdtree-git"]
 	path = bundle/nerdtree-git
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin
-  ignore = untracked
+	ignore = untracked
 [submodule "bundle/alduin"]
 	path = bundle/alduin
 	url = https://github.com/AlessandroYorba/Alduin.git
-  ignore = untracked
+	ignore = untracked
 [submodule "bundle/cursorword"]
 	path = bundle/cursorword
 	url = https://github.com/itchyny/vim-cursorword.git
-  ignore = untracked
+	ignore = untracked
 [submodule "bundle/vim-tmux-focus-events"]
 	path = bundle/vim-tmux-focus-events
 	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
-  ignore = untracked
+	ignore = untracked
 [submodule "bundle/sleuth"]
 	path = bundle/sleuth
 	url = https://github.com/tpope/vim-sleuth.git
-  ignore = untracked
+	ignore = untracked
+[submodule "bundle/brogrammer"]
+	path = bundle/brogrammer
+	url = https://github.com/marciomazza/vim-brogrammer-theme.git
+	ignore = untracked
