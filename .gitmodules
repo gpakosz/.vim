@@ -190,3 +190,7 @@
 	path = bundle/brogrammer
 	url = https://github.com/marciomazza/vim-brogrammer-theme.git
 	ignore = untracked
+[submodule "bundle/tender"]
+	path = bundle/tender
+	url = https://github.com/jacoborus/tender.vim.git
+	ignore = untracked
