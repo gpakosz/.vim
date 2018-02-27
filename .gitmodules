@@ -201,3 +201,8 @@
 [submodule "bundle/pink-moon"]
 	path = bundle/pink-moon
 	url = https://github.com/sts10/vim-pink-moon.git
+	ignore = untracked
+[submodule "bundle/orbital"]
+	path = bundle/orbital
+	url = https://github.com/fcpg/vim-orbital.git
+	ignore = untracked
