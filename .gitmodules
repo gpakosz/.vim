@@ -206,3 +206,7 @@
 	path = bundle/orbital
 	url = https://github.com/fcpg/vim-orbital.git
 	ignore = untracked
+[submodule "bundle/one"]
+	path = bundle/one
+	url = https://github.com/rakr/vim-one.git
+	ignore = untracked
