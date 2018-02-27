@@ -194,3 +194,7 @@
 	path = bundle/tender
 	url = https://github.com/jacoborus/tender.vim.git
 	ignore = untracked
+[submodule "bundle/solarized8"]
+	path = bundle/solarized8
+	url = https://github.com/lifepillar/vim-solarized8.git
+	ignore = untracked
