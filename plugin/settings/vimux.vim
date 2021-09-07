@@ -1,5 +1,9 @@
 " -- vimux settings ------------------------------------------------------------
 
+if !executable('tmux')
+  let g:loaded_vimux = 1
+endif
+
 let VimuxResetSequence = "q C-u C-l"
 
 " prompt for a command to run
